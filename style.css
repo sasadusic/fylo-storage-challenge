@@ -1,0 +1,242 @@
+/* Bootstrab Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  }
+  /*
+  2. Remove default margin
+  */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .3s;
+    font-family: helvetica;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+  5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+  6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+  7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+  8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+:root{
+  /* Primary */
+  --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  
+  /* Neutral */
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+  .attribution { 
+    font-size: 16px; 
+    text-align: center;
+    padding: 24px;
+    background: #202020;
+    color: white;
+   }
+  .attribution a { 
+    color: hsl(228, 45%, 44%);
+   }
+p{
+  font-size: 14px;
+}
+.phar{
+  color: var(--Grayish-Blue);
+}
+span{
+  font-weight: 600;
+  color: var(--Pale-Blue);
+}
+.main{
+  min-height: 100vh;
+  background-image: url(images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 27vw;
+  background-color: var(--Very-Dark-Blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item{
+  display: flex;
+  align-items: end;
+  gap: 24px;
+}
+.left{
+  background: var(--Dark-Blue);
+  padding: 40px;
+  width: 350px;
+  border-radius: 12px;
+  border-top-right-radius: 100px;
+}
+.logo{
+  margin-bottom: 24px;
+}
+.icon-cont{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.icon{
+  width: 44px;
+  height: 44px;
+  background: var(--Very-Dark-Blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.right{
+  background: var(--Dark-Blue);
+  padding: 40px;
+  position: relative;
+  border-radius: 12px;
+  width: min(600px, 50vw);
+}
+.left-phar{
+  position: absolute;
+  top: -40px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  right: 40px;
+}
+.left-phar::before{
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 1px;
+  color: var(--Grayish-Blue);
+  font-size: 12px;
+  font-weight: 700;
+  border-right: 20px solid white;
+  border-left: 20px solid transparent;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  bottom: -20px;
+  right: 0;
+  z-index: 1;
+}
+.num{
+  font-size: 24px;
+  color: #000;
+  font-weight: 700;
+}
+.up{
+  position: relative;
+  top: -2px;
+}
+.progres{
+  width: 100%;
+  height: 14px;
+  border-radius: 50px;
+  background: var(--Very-Dark-Blue);
+  position: relative;
+}
+.progres::before{
+  content: '';
+  position: absolute;
+  width: 81.5%;
+  height: 10px;
+  top: 1px;
+  left: 1px;
+  background: linear-gradient(90deg, #ffa399, #ff4d97);
+  border-radius: 50px;
+}
+.progres::after{
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50px;
+  top: 2px;
+  left: calc(81.5% - 8px);
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--Pale-Blue);
+  margin-top: 12px;
+}
+.flex .phar{
+  font-weight: 600;
+  color: white;
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (width < 1200px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (width < 992px) {
+  .main{
+    background-position: center 38vw;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (width < 768px) {
+  .main{
+    background-image: url(images/bg-mobile.png);
+    background-size: cover;
+    background-position: center center;
+  }
+  .item{
+    flex-direction: column;
+  }
+  .left{
+    width: 100%;
+  }
+  .right{
+    width: 100%;
+  }
+  .progres{
+    margin-top: 18px;
+  }
+  .left-phar{
+    /* bottom: -40px; */
+    top: 80%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .left-phar::before{
+    border: none;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (width < 576px) {}
